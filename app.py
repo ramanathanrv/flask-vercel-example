@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-# from vector_store import VectorStore
+from vector_store import VectorStore
 import os
 import json
 
@@ -13,9 +13,9 @@ with open(i2_file_loc, 'r') as f:
 
 app = Flask(__name__)
 
-# # Initialize the vector store
-# vs = VectorStore()
-# vs.build_index()
+# Initialize the vector store
+vs = VectorStore()
+vs.build_index()
 
 @app.route('/cards', methods=['GET'])
 def get_cards():
@@ -27,7 +27,6 @@ def get_cards():
 @app.route('/index')
 @app.route('/home')
 def home():
-    print(f"Home page")
     return render_template('index.html')  # This will render templates/index.html
 
 # @app.route('/admin/rebuild', methods=['POST'])
