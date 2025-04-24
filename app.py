@@ -3,13 +3,13 @@ from flask import Flask, request, jsonify, render_template
 import os
 import json
 
-# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# i2_file_loc = os.path.join(BASE_DIR, 'i2.json')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+i2_file_loc = os.path.join(BASE_DIR, 'i2.json')
 
 
-# with open(i2_file_loc, 'r') as f:
-#     data = json.load(f)
-#     card_list = [item['card'] for item in data if 'card' in item]
+with open(i2_file_loc, 'r') as f:
+    data = json.load(f)
+    card_list = [item['card'] for item in data if 'card' in item]
 
 app = Flask(__name__)
 
