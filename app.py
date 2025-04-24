@@ -14,8 +14,8 @@ with open(i2_file_loc, 'r') as f:
 app = Flask(__name__)
 
 # Initialize the vector store
-vs = VectorStore()
-vs.build_index()
+# vs = VectorStore()
+# vs.build_index()
 
 @app.route('/cards', methods=['GET'])
 def get_cards():
