@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaveMax – Maximize Your Credit Card Rewards</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Add Tagify CSS -->
+  <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+  <link  href="{{ url_for('static', filename='sm.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100 relative overflow-x-hidden">
+  <header class="w-full p-4 flex justify-start items-center">
+    <h1 class="text-xl font-bold text-yellow-400">savemax.cc</h1>
+  </header>
+
+  <section class="relative flex flex-col items-center justify-center min-h-screen px-4 text-center z-10">
+    <!-- Hero content -->
+    <h2 class="text-3xl sm:text-4xl font-semibold mb-4 z-10 text-yellow-300">Maximize Your Rewards, Every Swipe</h2>
+    <p class="text-lg text-gray-300 mb-6 z-10">What's your upcoming expense?</p>
+
+    <input type="text" name="prompt" id="prompt-input"
+           placeholder="I want to spend ₹10,000 on a flight next month"
+           class="z-10 px-4 py-3 w-full max-w-md rounded-xl shadow text-gray-800 focus:outline-none mb-4">
+
+    <!-- Modified input for Tagify -->
+    <input type="text" name="cards" id="cards-input"
+      placeholder="Start typing your credit cards..."
+      class="z-10 px-4 py-3 w-full max-w-md rounded-xl shadow text-gray-800 focus:outline-none mb-4">
+    <div class="relative z-10 inline-block mb-10">
+      <button id="find-card-btn" 
+              class="relative bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-xl shadow transition-all duration-300 overflow-hidden cta-shimmer-effect">
+        <span>Find the best card for max rewards</span>
+      </button>
+    </div>
+
+    <!-- Mocked Result Preview (Consider adding IDs here too if you want to update them with results) -->
+    <div id="results-container" class="w-full max-w-md"> <!-- Optional: Wrapper for results -->
+        <div class="z-10 bg-gray-800 shadow-xl rounded-xl p-6 w-full text-left border border-yellow-500 mb-6 hidden"> <!-- Start hidden -->
+          <h3 class="text-xl font-bold mb-2 text-yellow-400">Your Best Match</h3>
+          <p class="text-lg mb-1">💳 <strong>HDFC Regalia Credit Card</strong></p>
+          <p class="text-gray-300 mb-2">Earn 20 Reward Points per ₹150 on travel bookings + complimentary lounge access</p>
+          <p class="text-sm text-yellow-300">Estimated Rewards Value: <strong class="text-green-400">₹800</strong></p>
+        </div>
+
+        <!-- Comparison with other cards -->
+        <div class="z-10 bg-gray-700 shadow-lg rounded-xl p-4 w-full text-left border border-gray-600 hidden"> <!-- Start hidden -->
+          <h4 class="text-lg font-semibold text-yellow-300 mb-1">Other Cards You Own</h4>
+          <div class="other-card">
+            <p class="mb-1">💳 <strong>SBI SimplyCLICK Credit Card</strong></p>
+            <p class="text-gray-300 mb-2">Earn 5 Reward Points per ₹100 on online spends</p>
+            <p class="text-sm text-yellow-200">Estimated Rewards Value: <strong class="text-red-400">₹500</strong></p>
+          </div>
+          <div class="other-card">
+            <p class="mb-1">💳 <strong>IDFC First Millennia Credit Card</strong></p>
+            <p class="text-gray-300 mb-2">Earn 5 Reward Points per ₹100 on online spends</p>
+            <p class="text-sm text-yellow-200">Estimated Rewards Value: <strong class="text-red-400">₹400</strong></p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <footer class="text-center p-6 text-sm text-gray-500 z-10">
+    &copy; 2025 <span class="text-yellow-500">SaveMax</span>. All rights reserved.
+  </footer>
+
+  <!-- Add Tagify JS -->
+  <script src="https://unpkg.com/@yaireo/tagify"></script>
+  <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+  <script src="{{ url_for('static', filename='sm.js') }}"></script>
+</body>
+</html>
